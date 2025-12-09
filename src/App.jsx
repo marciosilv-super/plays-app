@@ -1,16 +1,15 @@
-
-import React, { useState, useEffect } from "react";
-import LoginPage from './pages/LoginPage';
-import Dashboard from './pages/Dashboard';
-import { auth } from './firebase';
-import { onAuthStateChanged } from 'firebase/auth';
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
-  const [user, setUser] = useState(null);
-
-  onAuthStateChanged(auth, u => setUser(u));
-
-  if (!user) return <LoginPage />;
-  return <Dashboard user={user} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
