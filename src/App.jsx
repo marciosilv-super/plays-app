@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
 import { auth } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
+import React, { useState, useEffect } from "react";
 
 export default function App() {
   const [user, setUser] = useState(null);

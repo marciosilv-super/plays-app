@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
